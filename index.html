@@ -20,21 +20,23 @@
                         display: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
+                        lumen: {
+                            cyan: '#00A8E8',
+                            sky: '#0284C7',
+                            blue: '#0052B4',
+                            navy: '#003580',
+                            gold: '#F59E0B',
+                            amber: '#FBBF24',
+                            amberDark: '#D97706',
+                        },
                         slate: {
                             850: '#162032',
                             900: '#0F172A',
                             950: '#080D19',
-                        },
-                        amber: {
-                            450: '#F59E0B',
-                            550: '#D97706',
-                        },
-                        emerald: {
-                            550: '#059669',
                         }
                     },
                     boxShadow: {
-                        'card-light': '0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(15, 23, 42, 0.06)',
+                        'card-light': '0 20px 40px -15px rgba(0, 82, 180, 0.09), 0 0 1px 1px rgba(15, 23, 42, 0.06)',
                         'card-dark': '0 25px 50px -12px rgba(2, 6, 23, 0.45)',
                     }
                 }
@@ -46,35 +48,99 @@
         .bg-architectural-grid {
             background-size: 40px 40px;
             background-image: 
-                linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+                linear-gradient(to right, rgba(0, 82, 180, 0.045) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 82, 180, 0.045) 1px, transparent 1px);
+        }
+        /* Official Lumen Blue Gradient Text & Surfaces */
+        .text-lumen-gradient {
+            background: linear-gradient(180deg, #00A8E8 0%, #0052B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-lumen-gradient {
+            background: linear-gradient(135deg, #00A8E8 0%, #0052B4 100%);
+        }
+        .bg-lumen-gradient:hover {
+            background: linear-gradient(135deg, #0284C7 0%, #003E8A 100%);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-lumen-blue selection:text-white flex flex-col min-h-screen">
 
     <!-- =====================================================================
-         1. HEADER / NAVBAR
+         1. HEADER / NAVBAR (Official Lumen Logo & Brand Colors)
          ===================================================================== -->
     <header class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center gap-3 group focus:outline-none">
-                    <!-- Geometric Prism Mark -->
-                    <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center shadow-sm group-hover:bg-slate-800 transition-colors">
-                        <svg class="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
-                            <line x1="12" y1="22" x2="12" y2="15.5"></line>
-                            <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
-                        </svg>
-                    </div>
+                <!-- Official Lumen Advisory Group Vector Logo -->
+                <a href="#" class="flex items-center gap-3.5 group focus:outline-none">
+                    <!-- Custom Lightbulb + Golden Rays + Cyan-to-Royal-Blue Pathway SVG -->
+                    <svg class="w-11 h-12 shrink-0 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="lumenPathGrad" x1="60" y1="45" x2="60" y2="122" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00B4F0"/>
+                                <stop offset="55%" stop-color="#0077D4"/>
+                                <stop offset="100%" stop-color="#00449E"/>
+                            </linearGradient>
+                            <linearGradient id="lumenGoldGrad" x1="30" y1="10" x2="90" y2="65" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FBBF24"/>
+                                <stop offset="100%" stop-color="#F59E0B"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Radiating Golden Rays -->
+                        <g stroke="url(#lumenGoldGrad)" stroke-width="4.2" stroke-linecap="round">
+                            <line x1="60" y1="7" x2="60" y2="17"/>
+                            <line x1="36" y1="14" x2="41" y2="23"/>
+                            <line x1="84" y1="14" x2="79" y2="23"/>
+                            <line x1="19" y1="31" x2="28" y2="36"/>
+                            <line x1="101" y1="31" x2="92" y2="36"/>
+                            <line x1="13" y1="53" x2="23" y2="53"/>
+                            <line x1="107" y1="53" x2="97" y2="53"/>
+                        </g>
+                        <!-- Outer & Inner Golden Bulb Arcs -->
+                        <path d="M35.5 68.5C30.8 62.6 28 55.1 28 47C28 29.3 42.3 15 60 15C77.7 15 92 29.3 92 47C92 50.2 91.5 53.3 90.6 56.2" stroke="url(#lumenGoldGrad)" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M36.5 47C36.5 34 47 23.5 60 23.5" stroke="#FBBF24" stroke-width="2.6" stroke-linecap="round"/>
+                        <!-- Internal Spark Burst at Top of Pathway -->
+                        <g stroke="#F59E0B" stroke-width="2.3" stroke-linecap="round">
+                            <line x1="68" y1="37" x2="68" y2="41"/>
+                            <line x1="61" y1="40" x2="64" y2="43"/>
+                            <line x1="75" y1="40" x2="72" y2="43"/>
+                            <line x1="59" y1="47" x2="63" y2="47"/>
+                            <line x1="77" y1="47" x2="73" y2="47"/>
+                            <line x1="62" y1="53" x2="64.5" y2="50.5"/>
+                        </g>
+                        <!-- Flowing Blue Pathway Silhouette -->
+                        <path d="M44 86C44 79 36 74 36 66C36 58 46 55 57 52C64 50 69 47.5 69 47.5C69 47.5 65 53 56 58C47 63 45 69 49 77C51 81 52 84.5 52 87L44 86Z" fill="url(#lumenPathGrad)"/>
+                        <path d="M56 88C56 80 58 72 67 65C75 59 77 52 71 47.5C77 49.5 84 55 83 64C82 73 74 78 74 88L56 88Z" fill="url(#lumenPathGrad)"/>
+                        <!-- Bulb Screw Base Ribs -->
+                        <path d="M44 92.5C54 90.5 66 90.5 76 92.5C76 94.8 74.5 96.2 72 96.5C63 95 55 95 46 96.5C44.5 96.2 44 94.5 44 92.5Z" fill="url(#lumenPathGrad)"/>
+                        <path d="M45.5 100.5C55 98.8 65 98.8 74.5 100.5C74.5 102.8 73 104.2 70.5 104.5C62.5 103.2 55.5 103.2 47.5 104.5C46 104.2 45.5 102.5 45.5 100.5Z" fill="url(#lumenPathGrad)"/>
+                        <path d="M48 108.5C56 107.2 64 107.2 72 108.5C71.5 111 69.5 112.2 67 112.5C61.5 111.8 57.5 111.8 52 112.5C49.5 112.2 48.2 110.8 48 108.5Z" fill="url(#lumenPathGrad)"/>
+                        <path d="M52.5 116C57.5 115.5 62.5 115.5 67.5 116C65.5 120.5 62.5 123 60 123C57.5 123 54.5 120.5 52.5 116Z" fill="#00449E"/>
+                    </svg>
+
+                    <!-- Official LUMEN Wordmark with Split-Bar "E" + ADVISORY GROUP -->
                     <div class="flex flex-col">
-                        <span class="font-display font-bold text-lg tracking-tight text-slate-900 leading-none">
-                            LUMEN
-                        </span>
-                        <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 mt-0.5">
+                        <div class="flex items-center font-display font-extrabold text-[1.45rem] tracking-[0.06em] leading-none text-lumen-gradient">
+                            <span>LUM</span>
+                            <!-- Custom Split-Bar E matching the official logo -->
+                            <svg class="w-[0.82em] h-[0.78em] mx-[0.03em] inline-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="E">
+                                <defs>
+                                    <linearGradient id="eLetterGrad" x1="12" y1="0" x2="12" y2="24" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#00A8E8"/>
+                                        <stop offset="100%" stop-color="#0052B4"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect x="2" y="2" width="20" height="4.2" fill="url(#eLetterGrad)"/>
+                                <rect x="2" y="9.9" width="7.5" height="4.2" fill="url(#eLetterGrad)"/>
+                                <rect x="11.5" y="9.9" width="9.5" height="4.2" fill="url(#eLetterGrad)"/>
+                                <rect x="2" y="17.8" width="20" height="4.2" fill="url(#eLetterGrad)"/>
+                            </svg>
+                            <span>N</span>
+                        </div>
+                        <span class="text-[10.5px] font-semibold uppercase tracking-[0.24em] text-slate-600 mt-1">
                             Advisory Group
                         </span>
                     </div>
@@ -82,30 +148,30 @@
 
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#upgrades" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors py-2">
+                    <a href="#upgrades" class="text-sm font-medium text-slate-600 hover:text-lumen-blue transition-colors py-2">
                         Upgrades &amp; Rescues
                     </a>
-                    <a href="#implementations" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors py-2">
+                    <a href="#implementations" class="text-sm font-medium text-slate-600 hover:text-lumen-blue transition-colors py-2">
                         New Implementations
                     </a>
-                    <a href="#methodology" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors py-2">
+                    <a href="#methodology" class="text-sm font-medium text-slate-600 hover:text-lumen-blue transition-colors py-2">
                         Methodology
                     </a>
-                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-950 transition-colors py-2">
-                        About
+                    <a href="#principals" class="text-sm font-medium text-slate-600 hover:text-lumen-blue transition-colors py-2">
+                        Principal Advisors
                     </a>
                 </nav>
 
-                <!-- Subtle Header CTA + Mobile Menu Trigger -->
+                <!-- Header CTA + Mobile Menu Trigger -->
                 <div class="flex items-center gap-3">
-                    <button onclick="openConsultationModal('General Advisory Inquiry')" 
-                            class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-slate-900 bg-white border border-slate-300 rounded-lg shadow-xs hover:bg-slate-50 hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/20 transition-all cursor-pointer">
+                    <button onclick="openConsultationModal('General Executive Advisory')" 
+                            class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-lumen-gradient rounded-lg shadow-xs hover:shadow-md focus:outline-none focus:ring-2 focus:ring-lumen-blue/40 transition-all cursor-pointer">
                         Book a Consultation
                     </button>
 
                     <!-- Mobile Menu Button -->
                     <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu"
-                            class="md:hidden inline-flex items-center justify-center p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                            class="md:hidden inline-flex items-center justify-center p-2.5 rounded-lg text-slate-600 hover:text-lumen-blue hover:bg-slate-100 focus:outline-none">
                         <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -119,21 +185,21 @@
 
         <!-- Mobile Dropdown Navigation -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-lg">
-            <a href="#upgrades" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
+            <a href="#upgrades" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-lumen-blue">
                 Upgrades &amp; Rescues
             </a>
-            <a href="#implementations" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
+            <a href="#implementations" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-lumen-blue">
                 New Implementations
             </a>
-            <a href="#methodology" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
+            <a href="#methodology" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-lumen-blue">
                 Methodology
             </a>
-            <a href="#about" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-950">
-                About
+            <a href="#principals" class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-lumen-blue">
+                Principal Advisors
             </a>
             <div class="pt-2">
-                <button onclick="openConsultationModal('General Advisory Inquiry')" 
-                        class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors">
+                <button onclick="openConsultationModal('General Executive Advisory')" 
+                        class="w-full flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-lumen-gradient rounded-lg transition-colors">
                     Book a Consultation
                 </button>
             </div>
@@ -144,22 +210,22 @@
          2. HERO SECTION (Core Methodology & Positioning)
          ===================================================================== -->
     <main class="flex-grow">
-        <section class="relative overflow-hidden bg-white bg-architectural-grid pt-14 pb-16 sm:pt-20 sm:pb-24 border-b border-slate-200/70">
+        <section class="relative overflow-hidden bg-white bg-architectural-grid pt-14 pb-16 sm:pt-20 sm:pb-24 border-b border-slate-200/80">
             <!-- Subtle radial fade over grid -->
-            <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-slate-50/90 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-slate-50/95 pointer-events-none"></div>
             
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="max-w-4xl mx-auto text-center">
                     
                     <!-- Independent Authority Eyebrow Badge -->
-                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200/90 text-slate-700 text-xs sm:text-sm font-medium mb-7 shadow-2xs">
-                        <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                        <span>Independent IFS ERP Practice &bull; 100% Principal-Led Delivery</span>
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-50/90 border border-sky-200/80 text-slate-800 text-xs sm:text-sm font-medium mb-7 shadow-2xs">
+                        <span class="w-2 h-2 rounded-full bg-lumen-gold"></span>
+                        <span>Independent Principal-Led IFS Practice &bull; Zero Junior Hand-Offs</span>
                     </div>
 
                     <!-- Primary Executive Headline -->
-                    <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.5rem] text-slate-950 tracking-tight leading-[1.12] mb-6">
-                        Senior-Led IFS Cloud Advisory, Upgrades &amp; Implementations.
+                    <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.45rem] text-slate-950 tracking-tight leading-[1.12] mb-6">
+                        Senior-Led IFS Cloud Advisory, <span class="text-lumen-gradient">Upgrades &amp; Implementations.</span>
                     </h1>
 
                     <!-- Core Value & Methodology Subheadline -->
@@ -180,30 +246,29 @@
         <!-- =====================================================================
              3. THE FORK IN THE ROAD (Two Distinct High-Contrast Side-by-Side Cards)
              ===================================================================== -->
-        <section aria-label="Choose Your IFS Advisory Path" class="relative -mt-8 sm:-mt-12 pb-20 sm:pb-28 z-10">
+        <section aria-label="Choose Your IFS Advisory Path" class="relative -mt-8 sm:-mt-12 pb-20 sm:pb-24 z-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- 2-Column Responsive Grid -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
 
                     <!-- =========================================================
-                         CARD A: EXISTING IFS CUSTOMERS (Dark Slate + Warm Amber)
+                         CARD A: EXISTING IFS CUSTOMERS (Deep Slate + Lumen Gold)
                          ========================================================= -->
                     <article id="upgrades" 
-                             class="group relative flex flex-col justify-between rounded-2xl bg-slate-900 text-white p-8 sm:p-10 lg:p-12 shadow-card-dark border border-slate-800 hover:border-amber-400/60 hover:-translate-y-1.5 transition-all duration-300">
+                             class="group relative flex flex-col justify-between rounded-2xl bg-slate-900 text-white p-8 sm:p-10 lg:p-12 shadow-card-dark border border-slate-800 hover:border-lumen-gold/70 hover:-translate-y-1.5 transition-all duration-300">
                         
                         <!-- Top Accent Bar -->
-                        <div class="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 opacity-90"></div>
+                        <div class="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-lumen-gold via-lumen-amber to-lumen-gold"></div>
 
                         <div>
                             <!-- Eyebrow / Tag & Icon Row -->
                             <div class="flex items-center justify-between gap-4 mb-7">
                                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs font-semibold uppercase tracking-wider">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                                    For Existing IFS Customers
+                                    <span class="w-1.5 h-1.5 rounded-full bg-lumen-amber"></span>
+                                    For Existing IFS Customers &bull; Upgrades &amp; Rescues
                                 </span>
-                                <div class="w-11 h-11 rounded-xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
-                                    <!-- Refresh / Upgrade Architecture Icon -->
+                                <div class="w-11 h-11 rounded-xl bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-lumen-amber group-hover:scale-105 transition-transform shrink-0">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                                     </svg>
@@ -223,24 +288,30 @@
                             <!-- Scannable Executive Proof Points -->
                             <ul class="space-y-3 mb-10 pt-6 border-t border-slate-800 text-sm text-slate-300">
                                 <li class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <svg class="w-5 h-5 text-lumen-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                     </svg>
-                                    <span>CRIM &amp; Technical Debt Audit for Evergreen Readiness</span>
+                                    <span>Technical Debt &amp; Customization Audit (CRIM Reduction)</span>
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <svg class="w-5 h-5 text-lumen-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                     </svg>
-                                    <span>In-Flight Project Turnaround &amp; SI Governance Rescue</span>
+                                    <span>Support Cliff &amp; Evergreen Release Protection</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-lumen-amber shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    <span>Clean-Core Cloud Migration &amp; Stalled Project Turnaround</span>
                                 </li>
                             </ul>
                         </div>
 
                         <!-- Card A Primary CTA Button -->
                         <div>
-                            <button onclick="openConsultationModal('Upgrade & Clean-Core Services (Apps 9/10)')" 
-                                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-display font-bold text-sm sm:text-base shadow-lg shadow-amber-500/10 transition-all duration-200 cursor-pointer group/btn">
+                            <button onclick="openConsultationModal('Upgrade & Clean-Core Services')" 
+                                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-lumen-amber hover:bg-amber-300 text-slate-950 font-display font-bold text-sm sm:text-base shadow-lg shadow-amber-500/10 transition-all duration-200 cursor-pointer group/btn">
                                 <span>Explore Upgrade &amp; Clean-Core Services</span>
                                 <svg class="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -250,23 +321,22 @@
                     </article>
 
                     <!-- =========================================================
-                         CARD B: NET-NEW ERP BUYERS (Crisp White + Deep Emerald)
+                         CARD B: NET-NEW ERP BUYERS (Crisp White + Lumen Royal Blue)
                          ========================================================= -->
                     <article id="implementations" 
-                             class="group relative flex flex-col justify-between rounded-2xl bg-white text-slate-900 p-8 sm:p-10 lg:p-12 shadow-card-light border border-slate-200/90 hover:border-emerald-600/50 hover:-translate-y-1.5 transition-all duration-300">
+                             class="group relative flex flex-col justify-between rounded-2xl bg-white text-slate-900 p-8 sm:p-10 lg:p-12 shadow-card-light border border-slate-200/90 hover:border-lumen-blue/60 hover:-translate-y-1.5 transition-all duration-300">
                         
                         <!-- Top Accent Bar -->
-                        <div class="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600"></div>
+                        <div class="absolute top-0 inset-x-8 h-1 rounded-b-full bg-lumen-gradient"></div>
 
                         <div>
                             <!-- Eyebrow / Tag & Icon Row -->
                             <div class="flex items-center justify-between gap-4 mb-7">
-                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                                    For Net-New ERP Buyers
+                                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-sky-50 border border-sky-200 text-lumen-blue text-xs font-semibold uppercase tracking-wider">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-lumen-cyan"></span>
+                                    For Net-New ERP Buyers &bull; Selection &amp; Implementation
                                 </span>
-                                <div class="w-11 h-11 rounded-xl bg-emerald-50/80 border border-emerald-100 flex items-center justify-center text-emerald-700 group-hover:scale-105 transition-transform">
-                                    <!-- Compass / Blueprint Architecture Icon -->
+                                <div class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-lumen-blue group-hover:scale-105 transition-transform shrink-0">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                                     </svg>
@@ -286,16 +356,22 @@
                             <!-- Scannable Executive Proof Points -->
                             <ul class="space-y-3 mb-10 pt-6 border-t border-slate-100 text-sm text-slate-700">
                                 <li class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <svg class="w-5 h-5 text-lumen-sky shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                     </svg>
-                                    <span>Vendor-Agnostic Fit Assessment &amp; License Negotiation</span>
+                                    <span>Vendor-Agnostic Requirements &amp; License Fit Assessment</span>
                                 </li>
                                 <li class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <svg class="w-5 h-5 text-lumen-sky shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                                     </svg>
-                                    <span>Zero Junior Consultants—100% Principal Solution Architects</span>
+                                    <span>Shop-Floor &amp; Field Service Operational Blueprinting</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-lumen-sky shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    <span>Principal-Only Deployment Execution—Zero Junior Staffing</span>
                                 </li>
                             </ul>
                         </div>
@@ -303,7 +379,7 @@
                         <!-- Card B Primary CTA Button -->
                         <div>
                             <button onclick="openConsultationModal('New Implementation Advisory')" 
-                                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-display font-bold text-sm sm:text-base shadow-lg shadow-emerald-900/10 transition-all duration-200 cursor-pointer group/btn">
+                                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-lumen-gradient text-white font-display font-bold text-sm sm:text-base shadow-lg shadow-blue-900/15 transition-all duration-200 cursor-pointer group/btn">
                                 <span>Explore New Implementation Advisory</span>
                                 <svg class="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -317,105 +393,481 @@
         </section>
 
         <!-- =====================================================================
-             4. BRIEF EXECUTIVE METHODOLOGY & ABOUT ANCHOR BAR
+             4. METHODOLOGY COMPARISON SECTION (Big-SI vs. Lumen Standard)
              ===================================================================== -->
-        <section id="methodology" class="bg-white border-t border-slate-200/80 py-16 sm:py-20">
+        <section id="methodology" class="bg-white border-t border-slate-200/80 py-20 sm:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div id="about" class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                    <div class="border-l-2 border-slate-900 pl-5">
-                        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">01 / Zero Pyramid Staffing</p>
-                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">15+ Year IFS Veterans Only</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Large systems integrators pitch with partners and deliver with trainees. Every Lumen engagement is staffed exclusively by principal architects.
-                        </p>
+                <div class="max-w-3xl mx-auto text-center mb-14">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-lumen-sky">Our Delivery Philosophy</span>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-slate-950 tracking-tight mt-2 mb-4">
+                        Why Enterprise Leaders Leave Generalist SIs
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                        Traditional ERP consultancies profit from change orders and pyramid staffing. Lumen operates as a fiduciary architectural partner from day one.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <!-- Left Column: The Big-SI Bait-and-Switch -->
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-8 sm:p-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-8 h-8 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-sm">&times;</span>
+                            <h3 class="font-display font-bold text-xl text-slate-700">The Big-SI Bait-and-Switch</h3>
+                        </div>
+                        <ul class="space-y-4 text-sm sm:text-base text-slate-600">
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-400 font-bold mt-0.5">&mdash;</span>
+                                <span><strong>Partner Pitch, Junior Delivery:</strong> Senior architects vanish after contract signature, replaced by offshore or newly certified trainees learning on your dime.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-400 font-bold mt-0.5">&mdash;</span>
+                                <span><strong>Custom-Code Bloat:</strong> Over-engineered modifications recreate legacy habits in IFS Cloud, trapping you in expensive evergreen upgrade cycles.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-slate-400 font-bold mt-0.5">&mdash;</span>
+                                <span><strong>License-Quota Bias:</strong> Recommendations driven by vendor tier targets rather than what your shop floor or field technicians actually need.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="border-l-2 border-amber-500 pl-5">
-                        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">02 / Clean-Core Discipline</p>
-                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Built for Evergreen Updates</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            We replace brittle legacy modifications with native IFS Cloud configurations, lobbies, and workflows so bi-annual updates never break operations.
-                        </p>
+
+                    <!-- Right Column: The Lumen Principal-Led Standard -->
+                    <div class="rounded-2xl bg-gradient-to-br from-sky-50/80 via-white to-amber-50/40 border-2 border-lumen-blue/30 p-8 sm:p-10 shadow-sm">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-8 h-8 rounded-lg bg-lumen-gradient text-white flex items-center justify-center font-bold text-sm">&#10003;</span>
+                            <h3 class="font-display font-bold text-xl text-slate-950">The Lumen Principal-Led Standard</h3>
+                        </div>
+                        <ul class="space-y-4 text-sm sm:text-base text-slate-800">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-lumen-blue shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span><strong>100% Principal Execution:</strong> The exact 15+ year IFS veterans who scope your architecture are hands-on configuring, testing, and leading cutover.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-lumen-gold shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span><strong>Evergreen Clean-Core Discipline:</strong> Native IFS Cloud workflows, lobbies, and APIs replace brittle legacy custom code so bi-annual updates run smoothly.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-lumen-blue shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span><strong>Zero-Kickback Independence:</strong> We accept no software commissions—giving you candid leverage in license negotiations and SI oversight.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="border-l-2 border-emerald-600 pl-5">
-                        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">03 / Commercial Independence</p>
-                        <h3 class="font-display font-bold text-lg text-slate-900 mb-2">Fiduciary Client Alignment</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            We do not resell software licenses or collect referral kickbacks. Our sole mandate is protecting your timeline, budget, and operational uptime.
-                        </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             5. PRINCIPAL LEADERSHIP PROFILES SECTION (#principals)
+             ===================================================================== -->
+        <section id="principals" class="bg-slate-50 border-t border-slate-200/80 py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="max-w-3xl mx-auto text-center mb-14">
+                    <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-lumen-blue">
+                        <span class="w-2 h-2 rounded-full bg-lumen-gold"></span>
+                        Direct Senior Accountability
+                    </span>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-slate-950 tracking-tight mt-2 mb-4">
+                        Meet Your Principal Advisory Team
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                        Every Lumen engagement is led directly by our founding principals—combining decades of deep IFS technical architecture, discrete manufacturing, and asset-intensive field service leadership.
+                    </p>
+                </div>
+
+                <!-- 3 Principal Advisor Profile Cards -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
+
+                    <!-- Principal 1: Enterprise Architecture & IFS Cloud Transformations -->
+                    <article class="flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 p-8 shadow-sm hover:border-lumen-blue/50 hover:shadow-md transition-all">
+                        <div>
+                            <!-- Monogram & Experience Badge -->
+                            <div class="flex items-center justify-between gap-4 mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-lumen-gradient text-white font-display font-extrabold text-lg flex items-center justify-center shadow-sm">
+                                    EA
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-lumen-blue text-xs font-semibold">
+                                    18+ Yrs IFS Architecture
+                                </span>
+                            </div>
+
+                            <p class="text-xs font-bold uppercase tracking-wider text-lumen-sky mb-1">
+                                Managing Principal &bull; Cloud &amp; Technical
+                            </p>
+                            <h3 class="font-display font-bold text-xl text-slate-950 mb-3">
+                                Enterprise Architecture &amp; IFS Cloud Transformations
+                            </h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Leads complex Apps 9/10 to IFS Cloud transitions, CRIM technical debt elimination, Aurena/Cloud UX modernization, and stalled SI project rescues for global enterprises.
+                            </p>
+
+                            <!-- Specialty Tags -->
+                            <div class="flex flex-wrap gap-2 pt-5 border-t border-slate-100 mb-8">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Apps 9/10 &rarr; Cloud</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Clean-Core Audits</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Integrations &amp; APIs</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openConsultationModal('Consult: Enterprise Architecture & IFS Cloud')"
+                                class="w-full py-3 px-4 rounded-xl border border-slate-300 hover:border-lumen-blue hover:bg-sky-50/60 text-slate-900 hover:text-lumen-blue font-display font-bold text-sm transition-colors cursor-pointer">
+                            Consult with Practice Lead &rarr;
+                        </button>
+                    </article>
+
+                    <!-- Principal 2: Manufacturing, Supply Chain & Shop-Floor Operations -->
+                    <article class="flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 p-8 shadow-sm hover:border-lumen-gold/70 hover:shadow-md transition-all">
+                        <div>
+                            <!-- Monogram & Experience Badge -->
+                            <div class="flex items-center justify-between gap-4 mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-slate-900 text-lumen-amber border border-amber-400/30 font-display font-extrabold text-lg flex items-center justify-center shadow-sm">
+                                    MS
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-lumen-amberDark text-xs font-semibold">
+                                    16+ Yrs Industrial ERP
+                                </span>
+                            </div>
+
+                            <p class="text-xs font-bold uppercase tracking-wider text-lumen-amberDark mb-1">
+                                Principal Advisor &bull; Manufacturing &amp; Supply Chain
+                            </p>
+                            <h3 class="font-display font-bold text-xl text-slate-950 mb-3">
+                                Manufacturing, Supply Chain &amp; Shop-Floor Operations
+                            </h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Architects engineer-to-order (ETO), configure-to-order (CTO), and multi-site discrete manufacturing models—aligning MRP, shop-floor execution, and cost accounting.
+                            </p>
+
+                            <!-- Specialty Tags -->
+                            <div class="flex flex-wrap gap-2 pt-5 border-t border-slate-100 mb-8">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Discrete &amp; ETO/CTO</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Shop-Floor Execution</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Supply Chain &amp; MRP</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openConsultationModal('Consult: Manufacturing & Supply Chain')"
+                                class="w-full py-3 px-4 rounded-xl border border-slate-300 hover:border-lumen-amberDark hover:bg-amber-50/60 text-slate-900 hover:text-lumen-amberDark font-display font-bold text-sm transition-colors cursor-pointer">
+                            Consult with Practice Lead &rarr;
+                        </button>
+                    </article>
+
+                    <!-- Principal 3: Enterprise Asset Management (EAM) & Field Service Execution -->
+                    <article class="flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 p-8 shadow-sm hover:border-lumen-blue/50 hover:shadow-md transition-all">
+                        <div>
+                            <!-- Monogram & Experience Badge -->
+                            <div class="flex items-center justify-between gap-4 mb-6">
+                                <div class="w-14 h-14 rounded-2xl bg-lumen-gradient text-white font-display font-extrabold text-lg flex items-center justify-center shadow-sm">
+                                    FS
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-lumen-blue text-xs font-semibold">
+                                    17+ Yrs EAM &amp; FSM
+                                </span>
+                            </div>
+
+                            <p class="text-xs font-bold uppercase tracking-wider text-lumen-sky mb-1">
+                                Principal Advisor &bull; EAM &amp; Field Service
+                            </p>
+                            <h3 class="font-display font-bold text-xl text-slate-950 mb-3">
+                                Enterprise Asset Management (EAM) &amp; Field Service Execution
+                            </h3>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                                Specializes in mission-critical asset lifecycle management, preventive maintenance, mobile workforce dispatch, and complex SLA service contracts across energy, utilities, and aviation.
+                            </p>
+
+                            <!-- Specialty Tags -->
+                            <div class="flex flex-wrap gap-2 pt-5 border-t border-slate-100 mb-8">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">IFS EAM &amp; MRO</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Field Service &amp; PSO</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Mobile Workforce</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openConsultationModal('Consult: EAM & Field Service Execution')"
+                                class="w-full py-3 px-4 rounded-xl border border-slate-300 hover:border-lumen-blue hover:bg-sky-50/60 text-slate-900 hover:text-lumen-blue font-display font-bold text-sm transition-colors cursor-pointer">
+                            Consult with Practice Lead &rarr;
+                        </button>
+                    </article>
+
+                </div>
+
+                <!-- 100% Principal Delivery Guarantee Banner -->
+                <div class="rounded-2xl bg-slate-900 text-white p-7 sm:p-9 border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="flex items-start sm:items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-400/30 text-lumen-amber flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg sm:text-xl text-white">
+                                The 100% Principal Delivery Guarantee
+                            </h3>
+                            <p class="text-sm text-slate-300 mt-1 max-w-2xl">
+                                We contractually guarantee that your advisory, architecture, and implementation work is executed directly by Lumen principals—never subcontracted or handed off to junior analysts.
+                            </p>
+                        </div>
                     </div>
+                    <a href="#briefing" 
+                       class="shrink-0 inline-flex items-center justify-center px-5 py-3 rounded-xl bg-lumen-gradient text-white font-display font-bold text-sm shadow-md transition-all">
+                        Request Principal Briefing
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             6. EMBEDDED EXECUTIVE BRIEFING & MAILCHIMP FORM SECTION (#briefing)
+             ===================================================================== -->
+        <section id="briefing" class="bg-white border-t border-slate-200/80 py-20 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- Left Column: Briefing Value Proposition -->
+                    <div class="lg:col-span-5">
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-lumen-sky">Direct Principal Access</span>
+                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-slate-950 tracking-tight mt-2 mb-5">
+                            Start a Candid Conversation About Your IFS Roadmap.
+                        </h2>
+                        <p class="text-base text-slate-600 leading-relaxed mb-8">
+                            Whether you are preparing an Apps 10 upgrade business case, auditing custom code risk, or evaluating IFS Cloud against competing ERPs, connect directly with a Lumen principal—no sales reps, no scripted pitch decks.
+                        </p>
+
+                        <div class="space-y-4 border-t border-slate-200 pt-6 text-sm text-slate-700">
+                            <div class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-sky-100 text-lumen-blue font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                <span><strong>Confidential Architecture Review:</strong> Share your current ERP footprint, custom modification count, or timeline pressure.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-amber-100 text-lumen-amberDark font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                <span><strong>1-on-1 Principal Working Session:</strong> Speak directly with the practice lead matched to your industry and technical scope.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-full bg-sky-100 text-lumen-blue font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                <span><strong>Actionable Next Steps:</strong> Leave with clear architectural options, realistic timelines, and clean-core recommendations.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Official Mailchimp Embedded Form -->
+                    <div class="lg:col-span-7">
+                        <div class="rounded-2xl bg-slate-50 border border-slate-200 p-7 sm:p-10 shadow-sm">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-5 mb-6">
+                                <div>
+                                    <h3 class="font-display font-bold text-xl text-slate-950">Request an Executive Briefing</h3>
+                                    <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Responded to directly by a Lumen Managing Principal within 1 business day.</p>
+                                </div>
+                                <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-medium text-slate-600">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    NDA Ready
+                                </span>
+                            </div>
+
+                            <!-- User-Provided Mailchimp Form Action & Attributes -->
+                            <form action="https://ifs-jobs.us13.list-manage.com/subscribe/post?u=ab912d3428af9331b4382efe9&amp;id=1ec2da9e3f&amp;f_id=005e01e9f0" 
+                                  method="post" 
+                                  id="mc-embedded-subscribe-form" 
+                                  name="mc-embedded-subscribe-form" 
+                                  class="validate space-y-5" 
+                                  target="_blank"
+                                  onsubmit="handleEmbeddedFormSubmit()">
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="mce-FNAME" class="block text-xs font-semibold text-slate-700 mb-1.5">First Name *</label>
+                                        <input type="text" name="FNAME" id="mce-FNAME" required placeholder="Alex"
+                                               class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
+                                    </div>
+                                    <div>
+                                        <label for="mce-LNAME" class="block text-xs font-semibold text-slate-700 mb-1.5">Last Name *</label>
+                                        <input type="text" name="LNAME" id="mce-LNAME" required placeholder="Morgan"
+                                               class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="mce-EMAIL" class="block text-xs font-semibold text-slate-700 mb-1.5">Work Email *</label>
+                                        <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="amorgan@company.com"
+                                               class="required email w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
+                                    </div>
+                                    <div>
+                                        <label for="mce-COMPANY" class="block text-xs font-semibold text-slate-700 mb-1.5">Company / Organization *</label>
+                                        <input type="text" name="COMPANY" id="mce-COMPANY" required placeholder="Acme Industrial Corp"
+                                               class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="mce-MMERGE5" class="block text-xs font-semibold text-slate-700 mb-1.5">Primary Advisory Focus</label>
+                                    <select name="MMERGE5" id="mce-MMERGE5"
+                                            class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-medium text-slate-800 focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
+                                        <option value="Upgrade & Clean-Core Services">IFS Apps 9/10 Upgrade &amp; Clean-Core Migration</option>
+                                        <option value="New Implementation Advisory">Net-New ERP Selection &amp; IFS Cloud Implementation</option>
+                                        <option value="In-Flight Project Rescue">In-Flight Project Turnaround / SI Governance Rescue</option>
+                                        <option value="Consult: Enterprise Architecture & IFS Cloud">Principal Consult: Enterprise Architecture &amp; Cloud</option>
+                                        <option value="Consult: Manufacturing & Supply Chain">Principal Consult: Manufacturing &amp; Supply Chain</option>
+                                        <option value="Consult: EAM & Field Service Execution">Principal Consult: EAM &amp; Field Service</option>
+                                        <option value="General Executive Advisory">General Executive Advisory</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="mce-MMERGE6" class="block text-xs font-semibold text-slate-700 mb-1.5">Current Environment &amp; Objectives</label>
+                                    <textarea name="MMERGE6" id="mce-MMERGE6" rows="3" placeholder="Tell us briefly about your current IFS version, target timeline, or key operational goals..."
+                                              class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none"></textarea>
+                                </div>
+
+                                <!-- Mailchimp Bot-Prevention Honeypot Field -->
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_ab912d3428af9331b4382efe9_1ec2da9e3f" tabindex="-1" value="">
+                                </div>
+
+                                <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                    <p class="text-xs text-slate-500">
+                                        Strict confidentiality. No marketing spam.
+                                    </p>
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe"
+                                            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-lumen-gradient text-white font-display font-bold text-sm shadow-md transition-all cursor-pointer">
+                                        <span>Submit Briefing Request</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Inline Confirmation Banner -->
+                                <div id="embedded-form-status" class="hidden rounded-xl bg-sky-50 border border-sky-200 p-4 text-sm text-slate-800">
+                                    <strong class="text-lumen-blue">Briefing request submitted.</strong> Your inquiry has been transmitted to Lumen Advisory Group, and a confirmation tab has opened. A Managing Principal will follow up shortly.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
     <!-- =====================================================================
-         FOOTER
+         7. FOOTER
          ===================================================================== -->
-    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
-            <div class="flex items-center gap-2.5 text-slate-200 font-display font-semibold">
-                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                <span>Lumen Advisory Group</span>
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800/80">
+                <!-- Footer Brand Mark -->
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center">
+                        <span class="w-2.5 h-2.5 rounded-full bg-lumen-gold"></span>
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-white tracking-wider text-base">LUMEN</span>
+                        <span class="text-xs uppercase tracking-[0.2em] text-slate-400 ml-1.5">Advisory Group</span>
+                    </div>
+                </div>
+
+                <!-- Footer Quick Links -->
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="#upgrades" class="hover:text-white transition-colors">Upgrades &amp; Rescues</a>
+                    <a href="#implementations" class="hover:text-white transition-colors">New Implementations</a>
+                    <a href="#methodology" class="hover:text-white transition-colors">Methodology</a>
+                    <a href="#principals" class="hover:text-white transition-colors">Principal Advisors</a>
+                    <a href="#briefing" class="text-lumen-amber hover:text-amber-300 transition-colors font-medium">Request Briefing</a>
+                </div>
             </div>
-            <p class="text-slate-500 text-xs sm:text-sm text-center">
-                Independent IFS Cloud Advisory, Upgrades &amp; Implementations. Not affiliated with IFS AB.
-            </p>
-            <p class="text-slate-500 text-xs">
-                &copy; 2026 Lumen Advisory Group LLC.
-            </p>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>
+                    Independent IFS Cloud Advisory, Upgrades &amp; Implementations. Not affiliated with or endorsed by IFS AB.
+                </p>
+                <p>
+                    &copy; 2026 Lumen Advisory Group LLC. All rights reserved.
+                </p>
+            </div>
         </div>
     </footer>
 
     <!-- =====================================================================
-         INTERACTIVE EXECUTIVE CONSULTATION MODAL (Replaces alert() cleanly)
+         8. INTERACTIVE EXECUTIVE CONSULTATION MODAL (Mailchimp Integrated)
          ===================================================================== -->
     <div id="consultation-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <!-- Backdrop -->
-        <div class="fixed inset-0 bg-slate-950/70 backdrop-blur-xs transition-opacity" onclick="closeConsultationModal()"></div>
+        <div class="fixed inset-0 bg-slate-950/75 backdrop-blur-xs transition-opacity" onclick="closeConsultationModal()"></div>
 
         <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
             <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg border border-slate-200">
                 
                 <!-- Modal Header -->
-                <div class="bg-slate-900 px-6 py-5 flex items-center justify-between">
+                <div class="bg-slate-900 px-6 py-5 flex items-center justify-between border-b border-slate-800">
                     <div>
-                        <span class="text-[11px] font-semibold uppercase tracking-widest text-amber-400">Executive Briefing</span>
+                        <span class="text-[11px] font-semibold uppercase tracking-widest text-lumen-amber">Executive Briefing</span>
                         <h3 id="modal-title" class="font-display font-bold text-lg text-white mt-0.5">
                             Schedule a Principal Consultation
                         </h3>
                     </div>
-                    <button type="button" onclick="closeConsultationModal()" class="text-slate-400 hover:text-white p-1.5 rounded-lg transition-colors cursor-pointer">
+                    <button type="button" onclick="closeConsultationModal()" aria-label="Close modal" class="text-slate-400 hover:text-white p-1.5 rounded-lg transition-colors cursor-pointer">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
                 </div>
 
-                <!-- Modal Form Body -->
-                <form id="consultation-form" onsubmit="handleConsultationSubmit(event)" class="p-6 sm:p-7 space-y-4">
+                <!-- Modal Mailchimp Form Body -->
+                <form action="https://ifs-jobs.us13.list-manage.com/subscribe/post?u=ab912d3428af9331b4382efe9&amp;id=1ec2da9e3f&amp;f_id=005e01e9f0" 
+                      method="post" 
+                      id="mc-modal-subscribe-form" 
+                      name="mc-embedded-subscribe-form" 
+                      class="validate p-6 sm:p-7 space-y-4" 
+                      target="_blank"
+                      onsubmit="handleModalConsultationSubmit()">
+                    
                     <div>
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Selected Advisory Track</label>
-                        <input type="text" id="selected-track" name="track" readonly
-                               class="w-full px-3.5 py-2.5 bg-slate-100 border border-slate-200 rounded-lg text-sm font-semibold text-slate-800 focus:outline-none">
+                        <label for="modal-selected-track" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">Selected Advisory Track</label>
+                        <input type="text" id="modal-selected-track" name="MMERGE5" readonly
+                               class="w-full px-3.5 py-2.5 bg-sky-50/70 border border-sky-200 rounded-lg text-sm font-semibold text-lumen-blue focus:outline-none">
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label for="exec-name" class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
-                            <input type="text" id="exec-name" required placeholder="Alex Morgan"
-                                   class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none">
+                            <label for="modal-fname" class="block text-xs font-semibold text-slate-700 mb-1">First Name *</label>
+                            <input type="text" id="modal-fname" name="FNAME" required placeholder="Alex"
+                                   class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
                         </div>
                         <div>
-                            <label for="exec-email" class="block text-xs font-semibold text-slate-700 mb-1">Work Email *</label>
-                            <input type="email" id="exec-email" required placeholder="amorgan@enterprise.com"
-                                   class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none">
+                            <label for="modal-lname" class="block text-xs font-semibold text-slate-700 mb-1">Last Name *</label>
+                            <input type="text" id="modal-lname" name="LNAME" required placeholder="Morgan"
+                                   class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="modal-email" class="block text-xs font-semibold text-slate-700 mb-1">Work Email *</label>
+                            <input type="email" id="modal-email" name="EMAIL" required placeholder="amorgan@enterprise.com"
+                                   class="required email w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
+                        </div>
+                        <div>
+                            <label for="modal-company" class="block text-xs font-semibold text-slate-700 mb-1">Company *</label>
+                            <input type="text" id="modal-company" name="COMPANY" required placeholder="Enterprise Corp"
+                                   class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none">
                         </div>
                     </div>
 
                     <div>
-                        <label for="exec-context" class="block text-xs font-semibold text-slate-700 mb-1">Current Environment / Timeline</label>
-                        <textarea id="exec-context" rows="3" placeholder="e.g., Currently on IFS Apps 10 Update 14, evaluating Q3 migration to IFS Cloud..."
-                                  class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-slate-900 focus:border-slate-900 outline-none"></textarea>
+                        <label for="modal-context" class="block text-xs font-semibold text-slate-700 mb-1">Current Environment / Timeline</label>
+                        <textarea id="modal-context" name="MMERGE6" rows="3" placeholder="e.g., Currently on IFS Apps 10 Update 14, evaluating Q3 migration to IFS Cloud..."
+                                  class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-lumen-blue focus:border-lumen-blue outline-none"></textarea>
+                    </div>
+
+                    <!-- Mailchimp Bot-Prevention Honeypot Field -->
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_ab912d3428af9331b4382efe9_1ec2da9e3f" tabindex="-1" value="">
                     </div>
 
                     <div class="pt-2 flex items-center justify-end gap-3">
@@ -423,8 +875,8 @@
                                 class="px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-900 cursor-pointer">
                             Cancel
                         </button>
-                        <button type="submit"
-                                class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors cursor-pointer">
+                        <button type="submit" name="subscribe"
+                                class="px-5 py-2.5 bg-lumen-gradient text-white text-sm font-semibold rounded-lg shadow-sm transition-all cursor-pointer">
                             Request Principal Briefing
                         </button>
                     </div>
@@ -432,7 +884,7 @@
 
                 <!-- Confirmation State -->
                 <div id="consultation-confirmation" class="hidden p-8 text-center">
-                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-4">
+                    <div class="w-12 h-12 rounded-full bg-sky-100 text-lumen-blue flex items-center justify-center mx-auto mb-4">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                         </svg>
@@ -442,7 +894,7 @@
                         A Managing Principal from Lumen Advisory Group will respond within one business day with calendar options.
                     </p>
                     <button type="button" onclick="closeConsultationModal()"
-                            class="px-5 py-2.5 bg-slate-900 text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors cursor-pointer">
+                            class="px-5 py-2.5 bg-lumen-gradient text-white text-sm font-semibold rounded-lg transition-all cursor-pointer">
                         Return to Page
                     </button>
                 </div>
@@ -452,7 +904,7 @@
     </div>
 
     <!-- =====================================================================
-         JAVASCRIPT FOR NAVIGATION & EXECUTIVE MODAL INTERACTIVITY
+         JAVASCRIPT FOR NAVIGATION & MAILCHIMP BRIEFING INTERACTIVITY
          ===================================================================== -->
     <script>
         // Mobile Menu Toggle Logic
@@ -485,12 +937,22 @@
 
         // Executive Consultation Modal Handlers
         const modal = document.getElementById('consultation-modal');
-        const trackInput = document.getElementById('selected-track');
-        const formEl = document.getElementById('consultation-form');
+        const trackInput = document.getElementById('modal-selected-track');
+        const embeddedSelect = document.getElementById('mce-MMERGE5');
+        const formEl = document.getElementById('mc-modal-subscribe-form');
         const confirmEl = document.getElementById('consultation-confirmation');
 
         function openConsultationModal(trackName) {
             trackInput.value = trackName;
+            // Sync embedded dropdown as well in case the user uses the on-page form
+            if (embeddedSelect) {
+                for (let i = 0; i < embeddedSelect.options.length; i++) {
+                    if (embeddedSelect.options[i].value === trackName) {
+                        embeddedSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
             formEl.classList.remove('hidden');
             confirmEl.classList.add('hidden');
             modal.classList.remove('hidden');
@@ -502,11 +964,21 @@
             document.body.classList.remove('overflow-hidden');
         }
 
-        function handleConsultationSubmit(event) {
-            event.preventDefault();
-            formEl.classList.add('hidden');
-            confirmEl.classList.remove('hidden');
-            event.target.reset();
+        // Allow native POST to Mailchimp target="_blank" while updating UI confirmation state
+        function handleModalConsultationSubmit() {
+            setTimeout(() => {
+                formEl.classList.add('hidden');
+                confirmEl.classList.remove('hidden');
+            }, 150);
+        }
+
+        function handleEmbeddedFormSubmit() {
+            const statusBanner = document.getElementById('embedded-form-status');
+            setTimeout(() => {
+                if (statusBanner) {
+                    statusBanner.classList.remove('hidden');
+                }
+            }, 150);
         }
 
         // Allow Escape key to close modal
